@@ -13,7 +13,7 @@ function App() {
   };
   return (
     <div>
-      <p>work</p>
+     <p>Саша привет😉</p>
       <button onClick={onClose}>Закрыть</button>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
