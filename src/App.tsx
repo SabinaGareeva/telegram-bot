@@ -3,18 +3,18 @@
 // import viteLogo from "/vite.svg";
 import React, { useEffect } from "react";
 import "./App.css";
-const tg = window.Telegram.WebApp;
+import { useTelegram } from "./hooks/useTelegram";
+
 function App() {
+  const {tg,onToggleButton} = useTelegram();
   useEffect(() => {
     tg.ready();
   }, []);
-  const onClose = () => {
-    tg.close();
-  };
+ 
   return (
     <div>
-     <p>Саша привет😉</p>
-      <button onClick={onClose}>Закрыть</button>
+      <p>Всем привет😉</p>
+      <button onClick={onToggleButton}>Toggle</button>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
