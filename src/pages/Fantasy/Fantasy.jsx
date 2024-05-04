@@ -5,14 +5,18 @@ import BookItem from "../../components/BookItem/BookItem";
 
 const Fantasy = () => {
   const [fantasyBook, setFantasyBook] = useState([]);
-  const [offset,setOffset]=useState(1)
+  const [offset, setOffset] = useState(0);
   const [currentPage, setPage] = useState(1);
-  const handleChange=(event, newPage) => {setPage(newPage)}
+  const limit = 50;
+  const handleChange = (event, newPage) => {
+    setPage(newPage);
+    setOffset(limit * (newPage - 1));
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://openlibrary.org/subjects/fantasy.json?offset=100&limit=50"
+          `https://openlibrary.org/subjects/fantasy.json?offset=${offset}&limit=${limit}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch");
@@ -24,19 +28,22 @@ const Fantasy = () => {
       }
     };
     fetchData();
-  }, []);
-console.log(fantasyBook)
+  }, [offset]);
+  console.log(offset);
   return (
-    <>
+    <div className={css.container}>
       <div className={css.books_container}>
         {fantasyBook?.works?.map((book) => (
-    <BookItem book={book}/>
+          <BookItem book={book} key={book.cover_id} />
         ))}
       </div>
-      <Pagination count={100} page={currentPage}  color="primary" onChange={handleChange}/>
-     
-   
-    </>
+      <Pagination
+        count={fantasyBook.work_count / 50}
+        page={currentPage}
+        color="primary"
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 export default Fantasy;
