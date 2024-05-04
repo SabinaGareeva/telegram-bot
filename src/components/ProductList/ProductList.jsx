@@ -87,6 +87,7 @@ const ProductList = () => {
         //  className={css.item}
           />
       ))}
+      <a href="/fantasy"> Ссылка на Fantasy</a>
     </div>
   );
 };
