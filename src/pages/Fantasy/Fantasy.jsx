@@ -12,7 +12,7 @@ const Fantasy = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://openlibrary.org/subjects/fantasy.json?offset=100&limit=50"
+          "https://openlibrary.org/subjects/fantasy.json?offset=100&limit=50"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch");
