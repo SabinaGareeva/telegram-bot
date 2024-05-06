@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   return (
-    <div >
+    <div className="container">
       <Header />
       <button onClick={onToggleButton}>Toggle</button>
       <Routes>

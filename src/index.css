@@ -12,16 +12,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  */
-  margin: 0 auto;
-  width: 1224px;
+
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
-@media (max-width: 376px) {
-  :root {
-    width: 350px;
-  } 
-}
+
 html {
   /* 10px */
   font-size: 62.5%;

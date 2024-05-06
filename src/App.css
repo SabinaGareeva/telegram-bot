@@ -6,4 +6,12 @@ body {
   background-color: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
-
+.container{
+  margin: 0 auto;
+  width: 1224px;
+}
+@media (max-width: 376px) {
+  .container {
+    width: 350px;
+  } 
+}
