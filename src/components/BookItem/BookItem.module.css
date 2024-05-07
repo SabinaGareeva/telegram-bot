@@ -1,5 +1,9 @@
 .book__container {
   width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 .book__image {
   width: 100%;
@@ -7,6 +11,12 @@
 }
 .book__title {
   font-size: 1.5rem;
+  min-height: 4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  margin-bottom: 0.2rem;
 
 }
 .book__authors,
